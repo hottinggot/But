@@ -1,5 +1,6 @@
 package com.example.projectbut;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +14,14 @@ import java.util.List;
 public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ViewHolder>{
 
     private List<Receipt> data;
+    private DataService dataService;
     private View.OnClickListener onItemViewClickListener;
+    private Context context;
 
-    public ReceiptAdapter(List<Receipt> data){
+    public ReceiptAdapter(List<Receipt> data, Context context, DataService dataService){
         this.data = data;
+        this.context = context;
+        this.dataService = dataService;
     }
 
     public void setOnItemViewClickListener(View.OnClickListener onItemViewClickListener){
@@ -29,7 +34,7 @@ public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ViewHold
         if(onItemViewClickListener != null){
             v.setOnClickListener(onItemViewClickListener);
         }
-        return new ReceiptAdapter.ViewHolder(v);
+        return new ViewHolder(v);
     }
 
     @Override
@@ -40,7 +45,7 @@ public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ViewHold
         try {
             holder.title.setText(data.get(position).getTitle());
             holder.shop_name.setText(data.get(position).getShopName());
-        } catch (Exception e) {System.out.println(e);}
+        } catch (Exception e) {System.out.println(e + "!!!!!");}
 
     }
 
@@ -56,6 +61,7 @@ public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ViewHold
             title = itemView.findViewById(R.id.title);
             shop_name = itemView.findViewById(R.id.shop_name);
         }
+
 
     }
 }

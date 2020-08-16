@@ -1,4 +1,6 @@
 package com.example.projectbut;
 
-public class ReceiptDetail {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ReceiptDetail extends AppCompatActivity {
 }

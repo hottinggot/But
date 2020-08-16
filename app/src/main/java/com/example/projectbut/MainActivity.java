@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //final View gray_box = findViewById(R.id.gray_box);
         final RecyclerView receipt_list = findViewById(R.id.receipt_list);
+
 
         receipt_list.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         receipt_list.addItemDecoration(new DividerItemDecoration(this));
@@ -36,25 +38,31 @@ public class MainActivity extends AppCompatActivity {
         dataService.select.selectAll().enqueue(new Callback<List<Receipt>>() {
             @Override
             public void onResponse(Call<List<Receipt>> call, Response<List<Receipt>> response) {
-                receiptList = response.body();
-                setAdapter(receipt_list);
+                try{
+                    receiptList = response.body();
+                    setAdapter(receipt_list);
+                } catch (Exception e) {
+                    System.out.println(e + "!!!!!!!!!");
+                }
+
             }
 
             @Override
             public void onFailure(Call<List<Receipt>> call, Throwable t) {
-
+                t.printStackTrace();
             }
         });
-
 
     }
 
     void setAdapter(final RecyclerView receipt_list){
-        final ReceiptAdapter receiptAdapter = new ReceiptAdapter(receiptList);
+        final ReceiptAdapter receiptAdapter = new ReceiptAdapter(receiptList, this, dataService);
         receiptAdapter.setOnItemViewClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), ReceiptDetail.class );
+                intent.putExtra("id", receiptList.get(receipt_list.getChildAdapterPosition(view)).getId());
+
                 view.getContext().startActivity(intent);
             }
         });
