@@ -45,7 +45,7 @@ public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ViewHold
         try {
             holder.title.setText(data.get(position).getTitle());
             holder.shop_name.setText(data.get(position).getShopName());
-        } catch (Exception e) {System.out.println(e + "!!!!!");}
+        } catch (Exception e) {System.out.println(e);}
 
     }
 
