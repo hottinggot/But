@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.projectbut.DividerItemDecoration;
 import com.example.projectbut.fragment.DateFragment;
 import com.example.projectbut.fragment.MonthFragment;
+import com.example.projectbut.util.Keys;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.MutableLiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,6 +23,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import retrofit2.Call;
@@ -37,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     private MonthFragment monthFragment;
     private DateFragment dateFragment;
     Bundle bundle = new Bundle(1);
-    //final RecyclerView receipt_list = findViewById(R.id.receipt_list);
 
     FragmentManager fm = getSupportFragmentManager();
 
@@ -93,22 +96,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /*
-    private void setAdapter(final RecyclerView receipt_list){
-        final ReceiptAdapter receiptAdapter = new ReceiptAdapter(receiptList, this, dataService);
-        receiptAdapter.setOnItemViewClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ReceiptDetail.class );
-                intent.putExtra("id", receiptList.get(receipt_list.getChildAdapterPosition(view)).getId());
-
-                view.getContext().startActivity(intent);
-            }
-        });
-        receipt_list.setAdapter(receiptAdapter);
-    }
-     */
-
     private View createTabView(String tabName){
         View tabView = LayoutInflater.from(mContext).inflate(R.layout.custom_tab,null);
         TextView txt_name = (TextView)tabView.findViewById(R.id.txt_name);
@@ -119,10 +106,12 @@ public class MainActivity extends AppCompatActivity {
     private void setFrag(int index){
         if(index == 0){
             fm.beginTransaction().replace(R.id.main_frame, monthFragment).commit();
+
         } else if (index == 1) {
             bundle.putParcelableArrayList("receiptList", (ArrayList<? extends Parcelable>) receiptList);
             dateFragment.setArguments(bundle);
             fm.beginTransaction().replace(R.id.main_frame, dateFragment).commit();
         }
     }
+
 }

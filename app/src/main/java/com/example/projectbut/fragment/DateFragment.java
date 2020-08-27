@@ -17,14 +17,10 @@ import com.example.projectbut.DataService;
 import com.example.projectbut.DividerItemDecoration;
 import com.example.projectbut.R;
 import com.example.projectbut.Receipt;
-import com.example.projectbut.ReceiptAdapter;
+import com.example.projectbut.adapter.ReceiptAdapter;
 import com.example.projectbut.ReceiptDetail;
 
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class DateFragment extends Fragment {

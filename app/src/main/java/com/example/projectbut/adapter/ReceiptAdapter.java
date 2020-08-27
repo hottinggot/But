@@ -1,4 +1,4 @@
-package com.example.projectbut;
+package com.example.projectbut.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,10 @@ import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.projectbut.DataService;
+import com.example.projectbut.R;
+import com.example.projectbut.Receipt;
 
 import java.util.List;
 

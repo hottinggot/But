@@ -1,16 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:id="@+id/month_container"
-android:background="@color/colorLightGray">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/month_container"
+    android:background="@color/colorLightGray"
+    android:orientation="vertical">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:animateLayoutChanges="true">
 
-    <TextView
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/month_header"
+            android:text="8월"
+            android:textSize="20dp"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="SUN"
+            android:textSize="9dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="MON"
+            android:textSize="9dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="TUE"
+            android:textSize="9dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="WED"
+            android:textSize="9dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="THU"
+            android:textSize="9dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="FRI"
+            android:textSize="9dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="SAT"
+            android:textSize="9dp" />
+
+    </LinearLayout>
+    
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="month fragment"
-        />
+        android:id="@+id/calender"/>
 
 </LinearLayout>
