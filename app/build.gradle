@@ -44,7 +44,9 @@ dependencies {
 
     // RecyclerView
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-
     implementation 'com.android.support:design:30.0.0-alpha3'
 
+    // Kakao SDK
+    implementation group: project.KAKAO_SDK_GROUP, name: 'usermgmt',
+            version: project.KAKAO_SDK_VERSION
 }
