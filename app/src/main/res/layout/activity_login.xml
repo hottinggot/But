@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:background="#FF3AB845"
+            android:background="@drawable/btn_green"
             android:text="로그인"
             android:textColor="#ffffff"
             android:textSize="20dp" />
