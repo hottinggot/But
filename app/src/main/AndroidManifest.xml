@@ -12,21 +12,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/manifests" />
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
+
         <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login.RegisterActivity"/>
-        <activity android:name=".login.FindActivity"/>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".login.RegisterActivity" />
+        <activity android:name=".login.FindActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

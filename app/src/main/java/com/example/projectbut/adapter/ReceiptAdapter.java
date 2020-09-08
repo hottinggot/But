@@ -9,9 +9,9 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.projectbut.DataService;
+import com.example.projectbut.Service.DataService;
 import com.example.projectbut.R;
-import com.example.projectbut.Receipt;
+import com.example.projectbut.Pojo.Receipt;
 
 import java.util.List;
 

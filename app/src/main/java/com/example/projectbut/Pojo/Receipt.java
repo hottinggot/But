@@ -1,9 +1,7 @@
-package com.example.projectbut;
+package com.example.projectbut.Pojo;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import androidx.versionedparcelable.ParcelField;
 
 import java.util.Date;
 

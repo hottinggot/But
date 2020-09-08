@@ -6,17 +6,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.projectbut.R;
 import com.example.projectbut.model.Day;
 import com.example.projectbut.model.EmptyDay;
-import com.example.projectbut.util.Keys;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 public class CalendarAdapter extends RecyclerView.Adapter{

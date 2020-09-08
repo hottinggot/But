@@ -13,18 +13,19 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.projectbut.DataService;
 import com.example.projectbut.DividerItemDecoration;
+import com.example.projectbut.Pojo.Receipt;
 import com.example.projectbut.R;
-import com.example.projectbut.Receipt;
-import com.example.projectbut.adapter.ReceiptAdapter;
 import com.example.projectbut.ReceiptDetail;
+import com.example.projectbut.Service.DataService;
+import com.example.projectbut.adapter.ReceiptAdapter;
 
 import java.util.List;
 
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class DateFragment extends Fragment {
     private View view;
+
     private DataService dataService = new DataService();
     private List<Receipt> receiptList;
     private RecyclerView receipt_list;
@@ -43,7 +44,8 @@ public class DateFragment extends Fragment {
         receipt_list.addItemDecoration(new DividerItemDecoration(getActivity()));
 
 
-        receiptList = bundle.getParcelableArrayList("receiptList");
+        receiptList = bundle.getParcelableArrayList("childReceiptList");
+        //Log.d("List success", receiptList.get(0).getTitle());
 
         setAdapter(receipt_list);
 

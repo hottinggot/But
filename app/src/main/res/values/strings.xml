@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">ProjectBut</string>
     <string name="kakao_app_key">2c7f085173cbe71808b123dd0fad8e86</string>
+    <string name="navigation_home"></string>
+    <string name="navigation_search"></string>
+    <string name="navigation_my"></string>
+    <string name="search">검색</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
