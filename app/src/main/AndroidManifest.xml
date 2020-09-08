@@ -27,6 +27,7 @@
         <activity android:name=".login.RegisterActivity"/>
         <activity android:name=".login.FindActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".login.retrofit.RetrofitPost"/>
     </application>
 
 </manifest>

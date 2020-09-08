@@ -4,7 +4,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class User {
 
-    @SerializedName("key")
     int userNum;
     String userId;
     String password;
@@ -14,9 +13,7 @@ public class User {
     public int getUserNum(){
         return userNum;
     }
-    public String getUserId(){
-        return userId;
-    }
+    public String getUserId(){ return userId; }
     public String getPassword(){
         return password;
     }

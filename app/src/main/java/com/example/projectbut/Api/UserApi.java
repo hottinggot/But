@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 
 public interface UserApi {
 
-    @GET("user")
+    @GET("/user")
     Call<List<User>> getUser();
 }

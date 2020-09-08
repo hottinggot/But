@@ -1,6 +1,7 @@
 package com.example.projectbut.adapter;
 
 import android.content.Context;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.projectbut.DataService;
 import com.example.projectbut.R;
 import com.example.projectbut.Receipt;
+import com.example.projectbut.model.ViewModel;
 
 import java.util.List;
 
