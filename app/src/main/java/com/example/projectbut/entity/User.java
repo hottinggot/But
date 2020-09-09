@@ -4,16 +4,18 @@ import com.google.gson.annotations.SerializedName;
 
 public class User {
 
-    int userNum;
-    String userId;
+    int user_num;
+    String user_id;
     String password;
     String email;
     String phone;
 
     public int getUserNum(){
-        return userNum;
+        return user_num;
     }
-    public String getUserId(){ return userId; }
+    public String getUserId(){
+        return user_id;
+    }
     public String getPassword(){
         return password;
     }

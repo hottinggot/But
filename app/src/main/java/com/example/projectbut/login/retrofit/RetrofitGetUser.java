@@ -18,7 +18,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitPost extends AppCompatActivity {
+public class RetrofitGetUser extends AppCompatActivity {
     private String URL = "http://192.168.0.4:8080/user/";
     //private String URL = "http://jsonplaceholder.typicode.com/";
     private TextView textViewResult;
@@ -26,12 +26,6 @@ public class RetrofitPost extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
-        post();
-
-    }
-
-    private void post(){
         setContentView(R.layout.activity_test);
 
         textViewResult = findViewById(R.id.text_view_result);
@@ -60,7 +54,8 @@ public class RetrofitPost extends AppCompatActivity {
                     content += "User Number: " + user.getUserNum() + "\n";
                     content += "Password: " + user.getPassword() + "\n";
                     content += "Phone: " + user.getPhone() + "\n";
-                    content += "Email" + user.getEmail() + "\n";
+                    content += "Email: " + user.getEmail() + "\n\n";
+
                     textViewResult.append(content);
                 }
             }
