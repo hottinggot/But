@@ -64,15 +64,20 @@ public class MonthFragment extends Fragment {
 
         GregorianCalendar cal = new GregorianCalendar();
         ArrayList<Object> calendarList = new ArrayList<>();
+        ArrayList<ArrayList<Object>> monthList = new ArrayList<>();
 
         date = cal.getTimeInMillis();
 
-        for(int i = -300; i<300; i++){
+        for(int i = -1; i<2; i++){
             try{
                 GregorianCalendar calendar = new GregorianCalendar(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+i,1,0,0,0);
 
                 int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK)-1; //월의 1일인 요일 -1 == empty 갯수를 알 수 있음.
                 int max = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+                for(int j=0; j<7-dayOfWeek;j++){
+                    calendarList.add(Keys.EMPTY);
+                }
 
                 for(int j=0; j<dayOfWeek; j++){
                     calendarList.add(Keys.EMPTY);
@@ -87,6 +92,7 @@ public class MonthFragment extends Fragment {
             }
         }
         mCalendarList = calendarList;
+        monthList.add(mCalendarList);
     }
 
 }

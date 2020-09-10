@@ -53,6 +53,11 @@ public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ViewHold
 
     }
 
+    public void setFilter(List<Receipt> receipts){
+        data = receipts;
+        notifyDataSetChanged();
+    }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 

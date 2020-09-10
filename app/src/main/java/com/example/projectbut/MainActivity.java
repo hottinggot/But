@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
                 receiptList = response.body();
                 bundle.putParcelableArrayList("receiptList", (ArrayList<? extends Parcelable>) receiptList);
                 homeFragment.setArguments(bundle);
+                searchFragment.setArguments(bundle);
+                FragmentManager fm = getSupportFragmentManager();
                 fm.beginTransaction().replace(R.id.navigation_frameLayout, homeFragment).commit();
             }
 
@@ -67,17 +69,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                FragmentManager fm = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 switch(menuItem.getItemId()){
                     case R.id.navigation_home : {
-                        fragmentTransaction.replace(R.id.navigation_frameLayout, homeFragment).commitAllowingStateLoss();
+                        fragmentTransaction.replace(R.id.navigation_frameLayout, homeFragment).commit();
                         break;
                     }
                     case R.id.navigation_search : {
-                        fragmentTransaction.replace(R.id.navigation_search, searchFragment).commitAllowingStateLoss();
+                        fragmentTransaction.replace(R.id.navigation_frameLayout, searchFragment).commit();
                         break;
                     }
                     case R.id.navigation_my : {

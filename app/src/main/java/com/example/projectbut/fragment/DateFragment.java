@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.projectbut.DividerItemDecoration;
 import com.example.projectbut.Pojo.Receipt;
 import com.example.projectbut.R;
-import com.example.projectbut.ReceiptDetail;
+import com.example.projectbut.ReceiptDetailActivity;
 import com.example.projectbut.Service.DataService;
 import com.example.projectbut.adapter.ReceiptAdapter;
 
@@ -57,10 +57,10 @@ public class DateFragment extends Fragment {
         receiptAdapter.setOnItemViewClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ReceiptDetail.class );
-                intent.putExtra("id", receiptList.get(receipt_list.getChildAdapterPosition(view)).getId());
+                Intent intent = new Intent(getActivity(), ReceiptDetailActivity.class );
+                //intent.putExtra("id", receiptList.get(receipt_list.getChildAdapterPosition(view)).getId());
 
-                view.getContext().startActivity(intent);
+                startActivity(intent);
             }
         });
         receipt_list.setAdapter(receiptAdapter);
